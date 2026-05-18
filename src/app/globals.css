@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+/* Pretendard 웹폰트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+/* 법적 문서 스타일 */
+.legal-content h2 {
+  @apply text-xl font-bold mt-10 mb-4 text-gray-900;
+}
+
+.legal-content h3 {
+  @apply text-lg font-semibold mt-8 mb-3 text-gray-800;
+}
+
+.legal-content p {
+  @apply mb-4 leading-relaxed text-gray-700;
+}
+
+.legal-content ul {
+  @apply mb-4 pl-6 space-y-1;
+}
+
+.legal-content li {
+  @apply text-gray-700 leading-relaxed;
+  list-style-type: disc;
+}
+
+.legal-content ol {
+  @apply mb-4 pl-6 space-y-1;
+}
+
+.legal-content ol li {
+  list-style-type: decimal;
+}
+
+.legal-content table {
+  @apply w-full border-collapse mb-6;
+}
+
+.legal-content th,
+.legal-content td {
+  @apply border border-gray-300 px-4 py-2 text-sm text-left;
+}
+
+.legal-content th {
+  @apply bg-gray-50 font-semibold;
+}
