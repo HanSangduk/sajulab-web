@@ -1,22 +1,22 @@
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata = {
-  title: "메신저 도사 이용약관 - 사주랩",
+  title: "두근 사주 이용약관 - 사주랩",
 };
 
 export default function MessengerTermsPage() {
   return (
-    <LegalLayout title="메신저 도사 이용약관" updatedAt="2026년 5월 18일">
+    <LegalLayout title="두근 사주 이용약관" updatedAt="2026년 5월 18일">
       <p>
         이 약관은 사주랩 개발자 한상덕(이하 &quot;개발자&quot;)가 제공하는
-        &quot;메신저 도사&quot; 서비스(이하 &quot;본 서비스&quot;)의 이용에 관한
+        &quot;두근 사주&quot; 서비스(이하 &quot;본 서비스&quot;)의 이용에 관한
         특별 조건을 규정합니다. 본 약관에서 정하지 않은 사항은 사주랩
         이용약관 및 개인정보 처리방침을 따릅니다.
       </p>
 
       <h2>제1조 (서비스 설명)</h2>
       <p>
-        메신저 도사는 이용자가 업로드한 카카오톡 대화 스크린샷을 AI가 분석하여,
+        두근 사주는 이용자가 업로드한 카카오톡 대화 스크린샷을 AI가 분석하여,
         이용자의 사주(사주팔자)·관상 관점에서 대화를 해석하고 커뮤니케이션
         전략을 제안하는 서비스입니다.
       </p>

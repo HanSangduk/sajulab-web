@@ -50,7 +50,7 @@ export default function LegalLayout({
               개인정보처리방침
             </Link>
             <Link href="/messenger-terms" className="hover:text-gray-600">
-              메신저 도사 이용약관
+              두근 사주 이용약관
             </Link>
           </div>
         </div>

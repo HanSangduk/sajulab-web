@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -5,7 +6,15 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-saju-dark to-gray-900 text-white">
       {/* Hero */}
       <main className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <p className="text-5xl mb-6">😼</p>
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/nyang_default.png"
+            alt="냥도사"
+            width={120}
+            height={120}
+            priority
+          />
+        </div>
         <h1 className="text-4xl font-bold mb-4">사주랩</h1>
         <p className="text-xl text-gray-300 mb-2">
           AI가 풀어주는 사주 · 관상 · 궁합
@@ -42,7 +51,7 @@ export default function Home() {
           </div>
           <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
             <p className="text-2xl mb-3">💬</p>
-            <h3 className="font-semibold text-lg mb-2">메신저 도사</h3>
+            <h3 className="font-semibold text-lg mb-2">두근 사주</h3>
             <p className="text-gray-400 text-sm">
               카톡 캡처 한 장이면 냥도사가 내 사주로 대화를 해석하고 다음 수를 알려줌.
             </p>
@@ -63,7 +72,7 @@ export default function Home() {
               개인정보처리방침
             </Link>
             <Link href="/messenger-terms" className="hover:text-gray-300">
-              메신저 도사 이용약관
+              두근 사주 이용약관
             </Link>
           </div>
         </div>
