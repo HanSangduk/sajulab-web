@@ -40,8 +40,8 @@ export default function LegalLayout({
       {/* Footer */}
       <footer className="border-t border-gray-200 mt-16">
         <div className="max-w-3xl mx-auto px-6 py-8 text-sm text-gray-400">
-          <p>주식회사 스트라 | 대표: 한상덕</p>
-          <p className="mt-1">문의: support@sajulab.ai</p>
+          <p>사주랩 | 개인 개발자 한상덕</p>
+          <p className="mt-1">문의: richramsang@gmail.com</p>
           <div className="mt-3 flex gap-4">
             <Link href="/terms" className="hover:text-gray-600">
               이용약관
