@@ -9,11 +9,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "사주랩 - AI 사주 · 관상 · 궁합",
     description: "AI가 풀어주는 사주, 관상, 궁합. 냥도사와 함께하는 운명 해석.",
-    url: "https://sajulab.ai",
+    url: "https://sajulab-web.vercel.app",
     siteName: "사주랩",
     locale: "ko_KR",
     type: "website",
   },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
