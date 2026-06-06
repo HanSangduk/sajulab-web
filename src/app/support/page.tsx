@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function SupportPage() {
   return (
-    <LegalLayout title="고객 지원" updatedAt="2026년 6월 3일">
+    <LegalLayout title="고객 지원" updatedAt="2026년 6월 3일" altHref="/en/support">
       <p>
         두근사주를 이용해 주셔서 감사합니다. 궁금한 점이나 불편한 점이 있으면
         아래 안내를 확인하시거나 이메일로 문의해 주세요. 1인 개발자가 직접

@@ -6,7 +6,11 @@ export const metadata = {
 
 export default function MessengerTermsPage() {
   return (
-    <LegalLayout title="두근 사주 이용약관" updatedAt="2026년 5월 18일">
+    <LegalLayout
+      title="두근 사주 이용약관"
+      updatedAt="2026년 5월 18일"
+      altHref="/en/messenger-terms"
+    >
       <p>
         이 약관은 사주랩 개발자 한상덕(이하 &quot;개발자&quot;)가 제공하는
         &quot;두근 사주&quot; 서비스(이하 &quot;본 서비스&quot;)의 이용에 관한

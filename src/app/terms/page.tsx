@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="이용약관" updatedAt="2026년 5월 18일">
+    <LegalLayout title="이용약관" updatedAt="2026년 5월 18일" altHref="/en/terms">
       <h2>제1조 (목적)</h2>
       <p>
         이 약관은 사주랩 개발자 한상덕(이하 &quot;개발자&quot;)이 제공하는

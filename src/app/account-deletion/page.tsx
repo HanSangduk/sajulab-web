@@ -8,7 +8,11 @@ export const metadata = {
 
 export default function AccountDeletionPage() {
   return (
-    <LegalLayout title="회원 탈퇴 안내" updatedAt="2026년 5월 18일">
+    <LegalLayout
+      title="회원 탈퇴 안내"
+      updatedAt="2026년 5월 18일"
+      altHref="/en/account-deletion"
+    >
       <h2>1. 앱 내 회원 탈퇴 (권장)</h2>
       <p>
         가장 빠른 방법은 사주랩 앱 안에서 직접 탈퇴하는 것입니다.

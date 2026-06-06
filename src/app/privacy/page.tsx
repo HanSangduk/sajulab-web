@@ -6,7 +6,11 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="개인정보 처리방침" updatedAt="2026년 5월 18일">
+    <LegalLayout
+      title="개인정보 처리방침"
+      updatedAt="2026년 5월 18일"
+      altHref="/en/privacy"
+    >
       <h2>제1조 (목적)</h2>
       <p>
         사주랩 개발자 한상덕(이하 &quot;개발자&quot;)는 「개인정보 보호법」 제30조에 따라
