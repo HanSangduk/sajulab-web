@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="이용약관" updatedAt="2026년 5월 18일" altHref="/en/terms">
+    <LegalLayout title="이용약관" updatedAt="2026년 6월 10일" altHref="/en/terms">
       <h2>제1조 (목적)</h2>
       <p>
         이 약관은 사주랩 개발자 한상덕(이하 &quot;개발자&quot;)이 제공하는
@@ -99,8 +99,11 @@ export default function TermsPage() {
       <h2>제7조 (이용자의 의무)</h2>
       <ol>
         <li>
-          이용자는 서비스 이용 시 본인의 정보만을 입력하여야 하며, 타인의
-          정보를 도용하여서는 안 됩니다.
+          이용자는 타인의 개인정보를 도용하여서는 안 됩니다. 궁합 분석,
+          두근 사주 등 타인의 정보(생년월일, 사진 등)를 입력하는 기능을
+          이용하는 경우, 이용자는 해당 정보를 적법하게 입력할 수 있는
+          경우에만 입력하여야 하며, 이를 위반하여 발생하는 문제에 대한
+          책임은 이용자에게 있습니다.
         </li>
         <li>
           이용자는 서비스를 이용하여 얻은 정보를 개발자의 사전 승낙 없이
@@ -253,7 +256,10 @@ export default function TermsPage() {
       </ol>
 
       <h2>부칙</h2>
-      <p>이 약관은 2026년 5월 18일부터 시행합니다.</p>
+      <p>
+        이 약관은 2026년 5월 18일부터 시행되었으며, 2026년 6월 10일
+        개정되었습니다 (제7조 제1항 — 타인 정보 입력에 관한 조건 명확화).
+      </p>
     </LegalLayout>
   );
 }

@@ -8,7 +8,7 @@ export default function MessengerTermsPageEn() {
   return (
     <LegalLayout
       title="Dugeun Saju Terms of Service"
-      updatedAt="May 18, 2026"
+      updatedAt="June 10, 2026"
       lang="en"
       altHref="/messenger-terms"
     >
@@ -29,23 +29,25 @@ export default function MessengerTermsPageEn() {
 
       <h2>Article 1 (Service Description)</h2>
       <p>
-        Dugeun Saju is a service in which AI analyzes KakaoTalk conversation
-        screenshots uploaded by the user, interprets the conversation from the
-        perspective of the user&apos;s saju (Four Pillars) and face reading,
-        and suggests communication strategies.
+        Dugeun Saju is a service that extracts text from KakaoTalk
+        conversation screenshots on the user&apos;s device (on-device OCR),
+        then has AI interpret the extracted conversation text from the
+        perspective of the user&apos;s saju (Four Pillars) and face reading
+        and suggest communication strategies.
       </p>
 
       <h2>Article 2 (Data Processing Principles)</h2>
-      <h3>1. Image processing</h3>
+      <h3>1. Image processing — on-device only</h3>
       <ul>
         <li>
-          Uploaded KakaoTalk screenshots are used only for AI OCR parsing (text
-          extraction) and are deleted from the server immediately after parsing
-          is complete.
+          KakaoTalk screenshots are OCR-processed only on the user&apos;s
+          device (on-device), and the original images are never transmitted to
+          the server.
         </li>
         <li>
-          Original images are not retained in any form, including server disks
-          or cloud storage.
+          Only the conversation text extracted on the device is sent to the
+          server for analysis. Original images are never collected or retained
+          in any form, including server disks or cloud storage.
         </li>
       </ul>
 
@@ -70,13 +72,29 @@ export default function MessengerTermsPageEn() {
           is stored in the relationship profile.
         </li>
         <li>
-          Sensitive information in conversations, such as phone numbers,
-          addresses, and bank account numbers, is automatically masked during
-          parsing.
+          We recommend covering sensitive information such as phone numbers,
+          addresses, and bank account numbers before capturing screenshots.
+          Sensitive information contained in transmitted conversation text is
+          not used for any purpose other than analysis and is not stored with
+          the original text after analysis.
         </li>
       </ul>
 
-      <h3>4. No AI training</h3>
+      <h3>4. Photos of the other person (optional feature)</h3>
+      <ul>
+        <li>
+          If a user attaches a photo of the person being analyzed, the photo
+          is processed only on the device via MediaPipe; only face-reading
+          metrics are sent to the server, and the original photo is never
+          transmitted or stored.
+        </li>
+        <li>
+          Users must attach only photos they may lawfully possess and use, and
+          bear responsibility for doing so.
+        </li>
+      </ul>
+
+      <h3>5. No AI training</h3>
       <p>
         Uploaded conversation data is not used for AI model training
         (fine-tuning), dataset construction, or similar purposes. It is
@@ -95,7 +113,21 @@ export default function MessengerTermsPageEn() {
           Act of Korea, and the user bears all legal responsibility for such
           acts.
         </li>
-        <li>Conversations of minors must not be uploaded.</li>
+        <li>
+          Conversations of children under the age of 14 must not be uploaded.
+        </li>
+        <li>
+          Romantic-relationship (LOVER) analysis is available only when the
+          user and the other person are both adults, or both minors aged 14
+          or older (peers). Analysis of a romantic relationship between an
+          adult and a minor is not provided, and if such a combination is
+          identified, the analysis may be refused or use of the Service may
+          be restricted.
+        </li>
+        <li>
+          When attaching a photo of the other person, users must use only
+          photos they may lawfully possess and use.
+        </li>
         <li>
           Analysis results must not be used to defame, insult, or stalk others.
         </li>
@@ -158,40 +190,13 @@ export default function MessengerTermsPageEn() {
       </ol>
 
       <h2>Article 7 (Pricing and Refunds)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tier</th>
-            <th>Price (KRW)</th>
-            <th>Includes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Free</td>
-            <td>₩0</td>
-            <td>
-              Conversation observation + saju context interpretation (beginning
-              of the streamed result)
-            </td>
-          </tr>
-          <tr>
-            <td>Single analysis</td>
-            <td>₩2,900</td>
-            <td>Full analysis including strategy and face reading</td>
-          </tr>
-          <tr>
-            <td>Relationship follow</td>
-            <td>₩9,900/month</td>
-            <td>Unlimited analyses for one person + weekly report</td>
-          </tr>
-          <tr>
-            <td>Premium subscription</td>
-            <td>₩19,900/month</td>
-            <td>Unlimited analyses for all relationships</td>
-          </tr>
-        </tbody>
-      </table>
+      <p>
+        The fees, product offerings (single analyses, subscriptions, etc.),
+        and prices for the Service are displayed on the relevant service and
+        checkout screens in the app, and users can confirm the final price
+        before payment. The scope of any free portion (such as previews) is
+        described on the service screen.
+      </p>
 
       <p>
         Refunds are governed by Article 10 (Refund Policy) of the Sajulab Terms
@@ -222,7 +227,12 @@ export default function MessengerTermsPageEn() {
       </ol>
 
       <h2>Addendum</h2>
-      <p>These Terms take effect on May 18, 2026.</p>
+      <p>
+        These Terms took effect on May 18, 2026 and were amended on June 10,
+        2026 (clarified on-device OCR processing, updated the sensitive
+        information guidance, added the article on photos of the other person,
+        specified age requirements, and changed how pricing is displayed).
+      </p>
     </LegalLayout>
   );
 }

@@ -8,7 +8,7 @@ export default function TermsPageEn() {
   return (
     <LegalLayout
       title="Terms of Service"
-      updatedAt="May 18, 2026"
+      updatedAt="June 10, 2026"
       lang="en"
       altHref="/terms"
     >
@@ -122,8 +122,13 @@ export default function TermsPageEn() {
       <h2>Article 7 (User Obligations)</h2>
       <ol>
         <li>
-          Users must enter only their own information and must not impersonate
-          others or misuse another person&apos;s information.
+          Users must not impersonate others or misuse another person&apos;s
+          personal information. When using features that involve entering
+          another person&apos;s information (such as compatibility analysis or
+          Dugeun Saju — e.g., birth date or photos), users must do so only
+          when they may lawfully enter such information, and users bear
+          responsibility for any issues arising from a violation of this
+          obligation.
         </li>
         <li>
           Users must not reproduce, distribute, broadcast, or otherwise use
@@ -289,7 +294,11 @@ export default function TermsPageEn() {
       </ol>
 
       <h2>Addendum</h2>
-      <p>These Terms take effect on May 18, 2026.</p>
+      <p>
+        These Terms took effect on May 18, 2026 and were amended on June 10,
+        2026 (Article 7(1) — clarified the conditions for entering another
+        person&apos;s information).
+      </p>
     </LegalLayout>
   );
 }
