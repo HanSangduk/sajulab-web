@@ -7,6 +7,7 @@ import { fetchByCode } from "@/lib/sajuTypeApi";
 import { SITE, PLAY_URL } from "@/lib/constants";
 import TypeCardVisual from "../TypeCardVisual";
 import ShareBar from "../ShareBar";
+import OpenInAppButton from "./OpenInAppButton";
 
 // mode B(type_code)는 60개 deterministic → 페이지 ISR 캐시(백엔드 호출 흡수).
 export const revalidate = 86400;
@@ -63,15 +64,22 @@ export default async function TypeLandingPage({ params }: Props) {
           내 사주 타입은? (생일만 입력)
         </a>
 
-        <ShareBar url={shareUrl} caption={caption} />
+        <ShareBar
+          url={shareUrl}
+          caption={caption}
+          imageUrl={`/t/${encodeURIComponent(core.typeCode)}/share-image`}
+          code={core.typeCode}
+          primaryClass="bg-saju-primary text-white hover:bg-purple-600"
+          outlineClass="border-white/20 text-white hover:border-white/40"
+        />
 
         <div className="mt-2 flex flex-col gap-2">
-          <a
-            href={`sajulab://t/${encodeURIComponent(code)}`}
+          <OpenInAppButton
+            code={core.typeCode}
             className="w-full rounded-2xl border border-white/20 px-8 py-3.5 text-center font-medium text-white transition-colors hover:border-white/40"
           >
             앱에서 열기 (대운·십신·궁합까지)
-          </a>
+          </OpenInAppButton>
           <a
             href={PLAY_URL}
             className="text-center text-sm text-gray-400 underline-offset-2 hover:underline"

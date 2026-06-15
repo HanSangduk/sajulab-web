@@ -127,7 +127,14 @@ export default function TypeFlow({ theme = "violet" }: { theme?: Theme }) {
     return (
       <div className="flex flex-col gap-5">
         <TypeCardVisual core={core} data={result} />
-        <ShareBar url={shareUrl} caption={caption} />
+        <ShareBar
+          url={shareUrl}
+          caption={caption}
+          imageUrl={`/t/${encodeURIComponent(result.type_code)}/share-image`}
+          code={result.type_code}
+          primaryClass={t.submit}
+          outlineClass={t.ctaOutline}
+        />
         <a
           href={PLAY_URL}
           className={`w-full rounded-2xl border px-8 py-3.5 text-center font-medium transition-colors ${t.ctaOutline}`}

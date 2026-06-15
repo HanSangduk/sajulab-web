@@ -1,38 +1,14 @@
 // P281 — 타입별 동적 OG 이미지 (SNS 링크 프리뷰). next/og(satori).
-// 폰트: Google Fonts css2 &text= 서브셋 → woff (satori 지원). 실패 시 라틴 fallback.
+// 폰트: Google Fonts css2 &text= 서브셋 → woff (loadNotoKR 공용 유틸). 실패 시 라틴 fallback.
 // 코어(typeCode 파싱)만 사용 — 백엔드 비의존(빠르고 안정, Vercel 이 타입별 캐시).
 import { ImageResponse } from "next/og";
 import { deriveCore } from "@/lib/sajuType";
+import { loadNotoKR } from "@/lib/ogFont";
 
 export const runtime = "nodejs";
 export const alt = "사주랩 — 내 사주 타입";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-// css2 + 모던 UA + text 서브셋 → /l/font (woff). satori 가 woff 를 읽음(woff2 X).
-async function loadFont(text: string, weight: number): Promise<ArrayBuffer | null> {
-  try {
-    const url = `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@${weight}&text=${encodeURIComponent(
-      text,
-    )}`;
-    const css = await (
-      await fetch(url, {
-        headers: {
-          // 이 UA 가 woff(가변 서브셋) 을 반환 (Chrome UA 는 woff2 → satori 불가)
-          "User-Agent":
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-        },
-      })
-    ).text();
-    const m = css.match(/src:\s*url\(([^)]+)\)\s*format\('?(woff|truetype|opentype)'?\)/);
-    if (!m) return null;
-    const res = await fetch(m[1]);
-    if (!res.ok) return null;
-    return await res.arrayBuffer();
-  } catch {
-    return null;
-  }
-}
 
 export default async function Image({
   params,
@@ -59,8 +35,8 @@ export default async function Image({
     `목화토금수木火土金水`;
 
   const [bold, regular] = await Promise.all([
-    loadFont(glyphs, 800),
-    loadFont(glyphs, 400),
+    loadNotoKR(glyphs, 800),
+    loadNotoKR(glyphs, 400),
   ]);
   // 폰트 둘 다 실패 → 한글 tofu 대신 라틴 브랜드 카드로 degrade (1년 immutable 캐시에 tofu 가 박히는 것 회피).
   if (!bold && !regular) {
