@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import DugeunDemo from "./DugeunDemo";
+import TypeFlow from "./t/TypeFlow";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -173,6 +174,54 @@ export default function Home() {
                 스크린샷 원본은 휴대폰 안에서만 처리되고, 서버로 전송되지
                 않습니다.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───────── 내 사주 타입 미리보기 (웹에서 바로 체험) ───────── */}
+      <section className="border-b border-[#A8A090]/15 bg-[#161310]">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <div className="mb-10 flex items-center gap-4">
+            <Stamp char="命" />
+            <div>
+              <h2 className="font-serif text-2xl sm:text-3xl">
+                내 사주 타입 미리보기
+              </h2>
+              <p className="mt-1 text-sm text-[#B5AB97]">
+                생일만 넣으면 60타입 중 내 타입 · 잘 맞는 결까지, 지금 여기서
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            {/* 설명 */}
+            <div className="order-2 md:order-1">
+              <ul className="space-y-5 leading-relaxed text-[#B5AB97]">
+                <li>
+                  <strong className="text-[#EDE5D4]">생일 하나면 끝</strong> —
+                  양/음력 생년월일만으로 1초 만에 내 오행 타입 카드를 받아요.
+                </li>
+                <li>
+                  <strong className="text-[#EDE5D4]">시(時)는 몰라도 OK</strong>{" "}
+                  — 태어난 시각을 알면 사주팔자 ‘시주’까지 더 정밀하게, 몰라도
+                  타입은 그대로 나와요.
+                </li>
+                <li>
+                  <strong className="text-[#EDE5D4]">
+                    잘 맞는 결 · 조심할 결
+                  </strong>{" "}
+                  — 오행 상생상극으로 나와 어울리는 기운을 한눈에.
+                </li>
+              </ul>
+              <p className="mt-6 border-l-2 border-[#D9B36A]/60 pl-4 text-sm text-[#B5AB97]/80">
+                더 깊은 풀이(대운·십신·궁합)는 사주랩 앱에서 이어집니다.
+              </p>
+            </div>
+
+            {/* 입력 폼 (TypeFlow, 웜톤 ember 테마) */}
+            <div className="order-1 mx-auto w-full max-w-md rounded-2xl border border-[#A8A090]/20 bg-[#1B1712] p-6 sm:p-8 md:order-2">
+              <TypeFlow theme="ember" />
             </div>
           </div>
         </div>

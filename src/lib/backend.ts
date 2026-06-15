@@ -5,7 +5,11 @@
 import { cookies } from "next/headers";
 import { ADMIN_COOKIE, verifySession } from "@/lib/admin-session";
 
-const BACKEND_BASE = process.env.BACKEND_BASE_URL ?? "https://api.sajulab.ai";
+// api.sajulab.ai 커스텀 도메인은 아직 미연결(NXDOMAIN) — 실제 백엔드는 Cloud Run.
+// 도메인 붙으면 BACKEND_BASE_URL env 한 줄로 전환(코드 수정 불필요).
+const BACKEND_BASE =
+  process.env.BACKEND_BASE_URL ??
+  "https://sajulab-backend-qqjgnsi3ja-du.a.run.app";
 const ADMIN_TOKEN = process.env.ADMIN_API_TOKEN ?? "";
 const SESSION_SECRET = process.env.ADMIN_SESSION_SECRET ?? "";
 
