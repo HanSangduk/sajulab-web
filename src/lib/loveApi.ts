@@ -4,6 +4,9 @@ import type { LoveLang } from "./loveLanguage";
 const BACKEND_BASE =
   process.env.BACKEND_BASE_URL ??
   "https://sajulab-backend-qqjgnsi3ja-du.a.run.app";
+// P294: 신뢰 웹 서버 per-IP 면제 토큰(서버 전용). 백엔드 SAJULAB_WEB_TRUSTED_TOKEN 과 동일 값.
+const WEB_TOKEN = process.env.WEB_TRUSTED_TOKEN;
+const WEB_TOKEN_HEADER: Record<string, string> = WEB_TOKEN ? { "X-Web-Token": WEB_TOKEN } : {};
 
 export interface LoveFusionResult {
   archetype_id: string;
@@ -43,7 +46,7 @@ export async function fetchLoveFusion(args: {
   try {
     const res = await fetch(`${BACKEND_BASE}/api/v1/love/fusion`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...WEB_TOKEN_HEADER },
       body: JSON.stringify({
         archetype_id: args.archetypeId,
         secondary_ll: args.secondary,

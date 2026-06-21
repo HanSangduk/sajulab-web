@@ -17,6 +17,10 @@ const BACKEND_BASE =
   process.env.BACKEND_BASE_URL ??
   "https://sajulab-backend-qqjgnsi3ja-du.a.run.app";
 const MOCK_ENABLED = process.env.SAJULAB_TYPE_MOCK === "1";
+// P294: 신뢰 웹 서버 per-IP rate-limit 면제 토큰(서버 전용 — runtime nodejs, 브라우저 미노출).
+//   웹 퍼널이 Vercel egress IP 로 뭉쳐 60/min 천장에 막히는 것 방지. 백엔드 SAJULAB_WEB_TRUSTED_TOKEN 과 동일 값.
+const WEB_TOKEN = process.env.WEB_TRUSTED_TOKEN;
+const WEB_TOKEN_HEADER: Record<string, string> = WEB_TOKEN ? { "X-Web-Token": WEB_TOKEN } : {};
 
 export interface BirthInput {
   year: number;
@@ -34,7 +38,7 @@ async function postType(
   try {
     const res = await fetch(`${BACKEND_BASE}/api/v1/saju/type`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...WEB_TOKEN_HEADER },
       body: JSON.stringify(body),
       // by-code(mode B)는 60개 deterministic → 캐시 OK. by-birth(mode A)는 생일=PII → no-store.
       ...(cacheable ? { cache: "force-cache" as const } : { cache: "no-store" as const }),
