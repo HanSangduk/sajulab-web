@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function DecovaPrivacy() {
   return (
-    <DecovaLayout title="개인정보처리방침" updatedAt="2026년 6월 17일" lang="ko">
+    <DecovaLayout title="개인정보처리방침" updatedAt="2026년 6월 24일" lang="ko">
       <p>
         {DECOVA_OPERATOR}(이하 &quot;개발자&quot;)는 {DECOVA_NAME}(AI 텍스팅 코치,
         이하 &quot;서비스&quot;) 이용자의 개인정보를 중요하게 생각하며,
@@ -40,7 +40,7 @@ export default function DecovaPrivacy() {
         </thead>
         <tbody>
           <tr>
-            <td>익명 기기 식별자(Device ID)</td>
+            <td>익명 기기·인증 식별자(Device ID, 익명 인증 UID)</td>
             <td>서비스 제공, 이용 횟수·구매 내역 관리, 부정 이용 방지</td>
           </tr>
           <tr>
@@ -82,6 +82,18 @@ export default function DecovaPrivacy() {
           <tr>
             <td>추천(초대) 코드</td>
             <td>친구 초대 혜택 처리</td>
+          </tr>
+          <tr>
+            <td>로그인 이메일(Apple 로그인 시 · 가린 이메일 relay 포함 · 선택)</td>
+            <td>계정 식별·기기 간 이력 연동·고객 문의 대응</td>
+          </tr>
+          <tr>
+            <td>서비스 이용 기록(기능·화면 상호작용 등 이벤트)</td>
+            <td>이용 통계 분석을 통한 서비스 개선</td>
+          </tr>
+          <tr>
+            <td>오류·성능 진단 정보(충돌 로그, 성능 지표)</td>
+            <td>앱 안정성 개선 및 오류 진단</td>
           </tr>
         </tbody>
       </table>
@@ -143,7 +155,10 @@ export default function DecovaPrivacy() {
           </tr>
           <tr>
             <td>Google Cloud Platform / Firebase</td>
-            <td>서버·데이터베이스 운영, 푸시 알림 발송</td>
+            <td>
+              서버·데이터베이스 운영, 푸시 알림 발송, 이용 통계 분석(Analytics),
+              오류·성능 진단(Crashlytics)
+            </td>
           </tr>
           <tr>
             <td>Google(생성형 AI)</td>

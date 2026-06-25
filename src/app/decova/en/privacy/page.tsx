@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function DecovaPrivacyEn() {
   return (
-    <DecovaLayout title="Privacy Policy" updatedAt="June 17, 2026" lang="en">
+    <DecovaLayout title="Privacy Policy" updatedAt="June 24, 2026" lang="en">
       <p>
         {DECOVA_OPERATOR} (&quot;we&quot;) operates {DECOVA_NAME} (an AI texting
         coach, the &quot;Service&quot;). We respect your privacy and comply with
@@ -41,7 +41,7 @@ export default function DecovaPrivacyEn() {
         </thead>
         <tbody>
           <tr>
-            <td>Anonymous device identifier</td>
+            <td>Anonymous device &amp; authentication identifier</td>
             <td>Provide the Service, manage usage/purchases, prevent abuse</td>
           </tr>
           <tr>
@@ -83,6 +83,18 @@ export default function DecovaPrivacyEn() {
           <tr>
             <td>Referral (invite) code</td>
             <td>Process invite rewards</td>
+          </tr>
+          <tr>
+            <td>Sign-in email (with Apple Sign In · including hidden relay · optional)</td>
+            <td>Account identification, cross-device history sync, support</td>
+          </tr>
+          <tr>
+            <td>Usage data (feature/screen interaction events)</td>
+            <td>Analytics to improve the Service</td>
+          </tr>
+          <tr>
+            <td>Crash &amp; performance diagnostics</td>
+            <td>Improve app stability and diagnose errors</td>
           </tr>
         </tbody>
       </table>
@@ -147,7 +159,10 @@ export default function DecovaPrivacyEn() {
           </tr>
           <tr>
             <td>Google Cloud Platform / Firebase</td>
-            <td>Server and database hosting, push notifications</td>
+            <td>
+              Server and database hosting, push notifications, usage analytics
+              (Analytics), crash &amp; performance diagnostics (Crashlytics)
+            </td>
           </tr>
           <tr>
             <td>Google (generative AI)</td>
