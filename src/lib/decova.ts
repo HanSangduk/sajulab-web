@@ -8,9 +8,12 @@ export const DECOVA_SITE =
   process.env.NEXT_PUBLIC_DECOVA_URL ??
   "https://sajulab-web.vercel.app/decova";
 
-// App Store 링크 — 심사 중/미출시면 빈 값 → 랜딩이 "출시 준비 중"으로 degrade.
+// App Store 링크 — 2026-06-24 iOS 출시 완료(id6781169397).
+//   storefront-agnostic(국가코드 없음) → 방문자 로컬 스토어로 자동 리다이렉트(KO/EN/기타 공용).
+//   env(NEXT_PUBLIC_DECOVA_APPSTORE_URL) 우선, 없으면 아래 fallback. 빈 값이면 "출시 준비 중"으로 degrade.
 export const DECOVA_APPSTORE_URL =
-  process.env.NEXT_PUBLIC_DECOVA_APPSTORE_URL ?? "";
+  process.env.NEXT_PUBLIC_DECOVA_APPSTORE_URL ??
+  "https://apps.apple.com/app/id6781169397";
 
 // 고객지원 이메일(운세 신호 없는 중립 주소). 전용 주소 생기면 교체.
 export const DECOVA_SUPPORT_EMAIL = "richramsang@gmail.com";
