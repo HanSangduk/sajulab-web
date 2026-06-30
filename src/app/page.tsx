@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DugeunDemo from "./DugeunDemo";
 import TypeFlow from "./t/TypeFlow";
+import { DECOVA_APPSTORE_URL } from "@/lib/decova";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -17,7 +18,6 @@ function getScreenshots(): string[] {
 }
 
 const PLAY_URL = "https://play.google.com/store/apps/details?id=com.han.sajulab";
-const IOS_WAITLIST_URL = "https://forms.gle/xq5mhYyrNcer75DK8";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -122,12 +122,10 @@ export default function Home() {
               Google Play에서 무료 다운로드
             </a>
             <a
-              href={IOS_WAITLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DECOVA_APPSTORE_URL}
               className="w-full rounded-full border border-[#EDE5D4]/25 px-8 py-4 text-center text-[#B5AB97] transition-colors hover:border-[#EDE5D4]/60 hover:text-[#EDE5D4] sm:w-auto"
             >
-              iOS 출시 알림 받기
+              App Store에서 무료 다운로드
             </a>
           </div>
 
